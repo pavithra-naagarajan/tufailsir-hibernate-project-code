@@ -1,0 +1,105 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<welcome-file-list>
+		<welcome-file>Home.html</welcome-file>
+	</welcome-file-list>
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>Welcome</servlet-name>
+		<display-name>Welcome</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.Welcome</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AuthenticateUser</servlet-name>
+		<display-name>AuthenticateUser</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.AuthenticateUser</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProductController</servlet-name>
+		<display-name>ProductController</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.ProductController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Demo</servlet-name>
+		<display-name>Demo</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.Demo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ErrorHandlerController</servlet-name>
+		<display-name>ErrorHandlerController</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.exceptions.ErrorHandlerController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<display-name>DispatcherServlet</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CustomerController</servlet-name>
+		<display-name>CustomerController</display-name>
+		<description></description>
+		<servlet-class>com.revature.training.pms.controller.CustomerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Welcome</servlet-name>
+		<url-pattern>/Welcome</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AuthenticateUser</servlet-name>
+		<url-pattern>/AuthenticateUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProductController</servlet-name>
+		<url-pattern>/ProductController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Demo</servlet-name>
+		<url-pattern>/Demo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ErrorHandlerController</servlet-name>
+		<url-pattern>/ErrorHandlerController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CustomerController</servlet-name>
+		<url-pattern>/CustomerController</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ErrorHandlerController</location>
+	</error-page>
+
+<error-page>
+		<error-code>405</error-code>
+		<location>/ErrorHandlerController</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/ErrorHandlerController</location>
+	</error-page>
+
+<error-page>
+		<exception-type>java.lang.NumberFormatException</exception-type>
+		<location>/ErrorHandlerController</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/ErrorHandlerController</location>
+	</error-page>
+</web-app>
